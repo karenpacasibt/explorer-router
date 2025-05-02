@@ -40,3 +40,20 @@
 .read-the-docs {
   color: #888;
 }
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.face-exit {
+  opacity: 1;
+}
+
+.face-exit-active{
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}

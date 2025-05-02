@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./styles.css";
+import { Link } from 'react-router-dom';
 
 const RepoList = () => {
   //State management
@@ -9,7 +10,6 @@ const RepoList = () => {
     const response = await axios.get(
       "https://api.github.com/search/repositories?q=XXX"
     );
-    console.log(response.data.items);
     setRepos(response.data.items);
     return response.data;
   };
@@ -32,15 +32,16 @@ const RepoList = () => {
             <div>
               By: <button className="repo-owner">{repo.owner.login}</button>
             </div>
-
-            <button>
-              <button>View Repo</button>
-            </button>
+            {/* observaciones 2 botones en uno */}
+            
+              <button>View Rsepo</button>
+          
           </div>
         ))
       ) : (
         <h1>Loading...</h1>
       )}
+      <Link to='/users'>Go to Users Page.</Link>
     </div>
   );
 };

@@ -9,7 +9,6 @@ const AuthProfile = ({ username }) => {
       const response = await axios.get(
         `https://api.github.com/users/${username}`
       );
-      console.log("USER IS HERE", response.data);
       setGitUserData(response.data);
       return response.data;
     };
